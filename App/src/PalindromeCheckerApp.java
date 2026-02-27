@@ -1,23 +1,23 @@
 import java.util.Scanner;
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Input text:");
-        String input=sc.nextLine();
-        boolean isPalindrome=true;
-        for(int i=0;i<input.length()/2;i++){
-            if(input.charAt(i)!=input.charAt(input.length()-1-i)){
-                isPalindrome=false;
-                break;
-            }
-
+        String input = sc.nextLine();
+        String rev = "";
+        boolean isPalindrome = true;
+        for (int i = input.length()-1; i >=0; i--) {
+            rev = rev + input.charAt(i);
         }
-        if(isPalindrome){
+
+
+        if (input.equals(rev)) {
             System.out.println("Is it a palindrome?: true");
-        }else{
+        } else {
             System.out.println("Is it a palindrome?: false");
         }
 
 
     }
+
 }
