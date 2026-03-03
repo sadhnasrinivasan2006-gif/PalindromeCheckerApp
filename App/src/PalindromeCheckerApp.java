@@ -1,17 +1,24 @@
 import java.util.*;
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
-        String input = "a man a plan a canal panama";
-        String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
-        boolean isPalindrome = true;
+        String input = "racecar";
+       PalindromeService service=new PalindromeService();
+       boolean isPalindrome=service.checkPalindrome(input);
+       System.out.print("is it a palindrome?:"+isPalindrome);
+    }
 
-        for (int i = 0; i < normalized.length() / 2; i++) {
-            if (normalized.charAt(i) != normalized.charAt(normalized.length() - 1 - i)) {
-                isPalindrome = false;
-                break;
+}
+class PalindromeService{
+    public boolean checkPalindrome(String input){
+        int start=0;
+        int end=input.length()-1;
+        while(start<end){
+            if(input.charAt(start)!=input.charAt(end)){
+                return false;
             }
+            start++;
+            end--;
         }
-        System.out.print("is it a palindrome?:"+isPalindrome);
-
+        return true;
     }
 }
