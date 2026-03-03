@@ -1,15 +1,15 @@
 import java.util.*;
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
-        String input = "refer";
-        Deque<Character> deque = new ArrayDeque<>();
+        String input = "level";
+        LinkedList<Character> list = new LinkedList<>();
         for (char c : input.toCharArray()) {
-            deque.add(c);
+            list.add(c);
         }
         boolean isPalindrome = true;
-        while (deque.size()>1) {
-            char first=deque.pollFirst();
-            char last =deque.pollLast();
+        while (list.size()>1) {
+            char first=list.removeFirst();
+            char last =list.removeLast();
             if(first!=last){
                 isPalindrome=false;
                 break;
